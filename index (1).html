@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedro Paravidino | Desenvolvedor em formação</title>
+<meta name="description" content="Portfólio de Pedro Paravidino, estudante de ADS que desenvolve sistemas internos com automação, backend e frontend na Viação Pendotiba.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { display: ['"Bricolage Grotesque"', 'sans-serif'], sans: ['"Instrument Sans"', 'system-ui', 'sans-serif'] },
+      colors: { ink: '#0a0d1f', panel: '#121633', line: '#232a55', accent: '#7c8cff', violet: '#a78bfa' }
+    } }
+  }
+</script>
+<style>
+  body { background: #0a0d1f; }
+  .glow { background: radial-gradient(600px circle at 80% 0%, rgba(124,140,255,.18), transparent 60%), radial-gradient(500px circle at 0% 40%, rgba(167,139,250,.12), transparent 60%); }
+  .caret { display:inline-block; width:2px; height:1em; background:#a78bfa; margin-left:3px; vertical-align:-2px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+  .card { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+  .card:hover { transform: translateY(-6px); border-color: #7c8cff; box-shadow: 0 18px 40px -18px rgba(124,140,255,.45); }
+  a:focus-visible, button:focus-visible { outline: 2px solid #a78bfa; outline-offset: 3px; border-radius: 6px; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } .caret { animation:none; } .card { transition:none; } html { scroll-behavior:auto; } }
+</style>
+</head>
+<body class="font-sans text-slate-300 antialiased">
+
+<!-- NAVBAR -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-line/60 bg-ink/80 backdrop-blur">
+  <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between" aria-label="Principal">
+    <a href="#inicio" class="font-display font-bold text-white text-lg">Pedro Paravidino</a>
+    <ul class="hidden md:flex gap-8 text-sm">
+      <li><a class="hover:text-white transition" href="#inicio">Início</a></li>
+      <li><a class="hover:text-white transition" href="#sobre">Sobre</a></li>
+      <li><a class="hover:text-white transition" href="#projetos">Projetos</a></li>
+      <li><a class="hover:text-white transition" href="#habilidades">Habilidades</a></li>
+      <li><a class="hover:text-white transition" href="#contato">Contato</a></li>
+    </ul>
+    <button id="menu-btn" class="md:hidden p-2 text-white" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </nav>
+  <ul id="menu" class="hidden md:hidden border-t border-line/60 bg-ink px-5 py-3 space-y-1 text-sm">
+    <li><a class="block py-2" href="#inicio">Início</a></li>
+    <li><a class="block py-2" href="#sobre">Sobre</a></li>
+    <li><a class="block py-2" href="#projetos">Projetos</a></li>
+    <li><a class="block py-2" href="#habilidades">Habilidades</a></li>
+    <li><a class="block py-2" href="#contato">Contato</a></li>
+  </ul>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="inicio" class="glow min-h-screen pt-28 pb-16 flex items-center">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-5 gap-12 items-center w-full">
+    <div class="md:col-span-3">
+      <p class="text-accent font-medium mb-4">Olá, eu sou</p>
+      <h1 class="font-display font-extrabold text-white text-5xl sm:text-6xl lg:text-7xl leading-[1.02] tracking-tight">Pedro Paravidino</h1>
+      <p class="mt-5 text-lg sm:text-xl text-slate-200">Estudante de Análise e Desenvolvimento de Sistemas | Desenvolvedor em formação</p>
+      <p class="mt-4 text-xl sm:text-2xl font-display text-violet min-h-[2.6em] sm:min-h-[1.5em]"><span id="typed"></span><span class="caret" aria-hidden="true"></span></p>
+      <p class="mt-4 max-w-xl text-slate-400">Transformo processos manuais em sistemas reais: menos papel, menos retrabalho e mais tempo para o que importa.</p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="#projetos" class="px-6 py-3 rounded-lg bg-gradient-to-r from-accent to-violet text-ink font-semibold hover:brightness-110 transition">Ver Projetos</a>
+        <a href="#contato" class="px-6 py-3 rounded-lg border border-line text-white hover:border-accent hover:bg-panel transition">Contato</a>
+      </div>
+    </div>
+    <div class="md:col-span-2 flex justify-center">
+      <!-- FOTO PROFISSIONAL (HERO): coloque o arquivo foto-profissional.jpg na mesma pasta deste index.html -->
+      <div class="relative w-64 h-64 sm:w-80 sm:h-80">
+        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-accent to-violet blur-2xl opacity-40"></div>
+        <img src="foto-profissional.jpg" alt="Foto de Pedro Paravidino" class="relative w-full h-full object-cover rounded-full border-2 border-line bg-panel">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="py-24">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-5 gap-12 items-center">
+    <div class="md:col-span-2 reveal flex justify-center">
+      <!-- FOTO PROFISSIONAL (SOBRE): mesma imagem ou outra, basta trocar o src -->
+      <img src="foto-profissional.jpg" alt="Pedro Paravidino trabalhando" class="w-64 h-72 sm:w-72 sm:h-80 object-cover rounded-2xl border border-line bg-panel">
+    </div>
+    <div class="md:col-span-3 reveal">
+      <h2 class="font-display font-bold text-white text-3xl sm:text-4xl">Sobre mim</h2>
+      <p class="mt-6 leading-relaxed">Sou estudante de Análise e Desenvolvimento de Sistemas na Estácio, no penúltimo período, e moro em São Gonçalo, RJ. Na Viação Pendotiba, desenvolvo sistemas internos que resolvem problemas do dia a dia da operação.</p>
+      <p class="mt-4 leading-relaxed">Meu foco é automação, backend, frontend e soluções práticas que reduzem trabalho manual e o uso de papel. Prefiro projetos que saem do papel e entram em uso de verdade, com usuários reais e resultado mensurável.</p>
+      <dl class="mt-8 grid grid-cols-3 gap-4 text-sm">
+        <div class="border-l-2 border-accent pl-3"><dt class="text-slate-500">Formação</dt><dd class="text-white">ADS, Estácio</dd></div>
+        <div class="border-l-2 border-accent pl-3"><dt class="text-slate-500">Atuação</dt><dd class="text-white">Viação Pendotiba</dd></div>
+        <div class="border-l-2 border-accent pl-3"><dt class="text-slate-500">Local</dt><dd class="text-white">São Gonçalo, RJ</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS (renderizados por JS a partir da lista no final do arquivo) -->
+<section id="projetos" class="py-24 bg-panel/40">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="reveal max-w-2xl">
+      <h2 class="font-display font-bold text-white text-3xl sm:text-4xl">Projetos</h2>
+      <p class="mt-4 text-slate-400">Sistemas em uso real na Viação Pendotiba, do backend ao frontend.</p>
+    </div>
+    <div id="projects-grid" class="mt-12 grid md:grid-cols-2 gap-6"></div>
+  </div>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades" class="py-24">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="font-display font-bold text-white text-3xl sm:text-4xl reveal">Habilidades</h2>
+    <div id="skills-grid" class="mt-12 grid sm:grid-cols-2 gap-x-12 gap-y-10"></div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="py-24 bg-panel/40">
+  <div class="max-w-3xl mx-auto px-5 text-center reveal">
+    <h2 class="font-display font-bold text-white text-3xl sm:text-4xl">Vamos conversar?</h2>
+    <p class="mt-5 text-slate-400">Tem uma ideia, uma vaga ou um processo que ainda depende de papel? Me chame. Respondo com prazer.</p>
+    <div class="mt-9 flex flex-wrap justify-center gap-4">
+      <!-- Troque SEU-USUARIO pelos seus perfis -->
+      <a href="https://www.linkedin.com/in/pedro-paravidino-09a5953a6" target="_blank" rel="noopener" class="px-6 py-3 rounded-lg bg-gradient-to-r from-accent to-violet text-ink font-semibold hover:brightness-110 transition">LinkedIn</a>
+      <a href="https://github.com/ppparavidino" target="_blank" rel="noopener" class="px-6 py-3 rounded-lg border border-line text-white hover:border-accent hover:bg-panel transition">GitHub</a>
+    </div>
+    <!-- Troque pelo seu e-mail real -->
+    <p class="mt-8 text-slate-300">ppparavidino@gmail.com</p>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-line/60 py-8">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+    <p>© <span id="year"></span> Pedro Paravidino</p>
+    <ul class="flex gap-6">
+      <li><a class="hover:text-white transition" href="#inicio">Início</a></li>
+      <li><a class="hover:text-white transition" href="#projetos">Projetos</a></li>
+      <li><a class="hover:text-white transition" href="#habilidades">Habilidades</a></li>
+      <li><a class="hover:text-white transition" href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+/* ====== DADOS: edite aqui para atualizar projetos e habilidades ====== */
+const projects = [
+  { title: "Examflow", subtitle: "Gestão de exames periódicos com automação de comunicação. Desenvolvido do zero para a Viação Pendotiba.",
+    items: ["Backend Python/FastAPI + SQL Server", "Importação automática de PDFs", "Motor de regras de periodicidade", "Convocações geradas em PDF", "Integração com WhatsApp", "Dashboard de status", "Migração de Windows para Linux"],
+    stack: ["Python","FastAPI","SQL Server","ReportLab","pdfplumber","Linux","systemd","LVM","rsync"] },
+  { title: "Site Institucional Viação Pendotiba", subtitle: "Site institucional completo, responsivo e com foco em conformidade.",
+    items: ["Frontend responsivo com Tailwind", "Trabalhe Conosco com upload de currículo", "Backend em PHP", "Geração de PDF", "Integração com ViaCEP", "Recursos de LGPD", "Design moderno com animações"],
+    stack: ["HTML5","CSS3","JavaScript","Tailwind CSS","PHP","FPDF","ViaCEP","cPanel","Git"] },
+  { title: "Suporte de TI com Agente de IA Local", subtitle: "Sistema de chamados técnicos com agente de IA rodando localmente.",
+    items: ["Backend FastAPI + SQL Server", "Painel Kanban", "Agente local (Llama 3.1 via Ollama) com tool calling", "Autenticação com bcrypt", "Laudos técnicos em PDF com hash SHA-256", "Conformidade com a LGPD"],
+    stack: ["Python","FastAPI","SQL Server","Ollama","Llama 3.1","ReportLab","HTML","CSS","JavaScript","bcrypt","SMTP","pyodbc"] },
+  { title: "BCA Digital", wip: true, subtitle: "Digitalização do BCA (Horário de Trabalho Diário em Veículo de Passageiro). Piloto em andamento.",
+    goal: "Eliminar o formulário em papel usado por motoristas e despachantes nas linhas de ônibus.",
+    items: ["PWA para tablet", "Assinatura digital por toque", "Troca de veículo, roleta e receita", "Cadastro de motoristas e cobradores", "Área admin com filtros e exportação PDF/TXT", "Autenticação JWT"],
+    stack: ["React","Vite","TypeScript","Tailwind CSS","PWA","Node.js","Express","Prisma","SQL Server","JWT"] }
+];
+const skills = {
+  "Backend": ["Python","FastAPI","Node.js","PHP","SQL Server","Prisma"],
+  "Frontend": ["React","TypeScript","HTML5","CSS3","JavaScript","Tailwind CSS"],
+  "Dados & BI": ["Power BI","SQL"],
+  "Infraestrutura": ["Linux","systemd","LVM","rsync","Git"],
+  "Outros": ["Automação","PWA","JWT","IA Local (Ollama/Llama)","LGPD"]
+};
+
+/* ====== Renderização ====== */
+const badge = t => `<span class="px-2.5 py-1 text-xs rounded-md bg-ink border border-line text-slate-300">${t}</span>`;
+document.getElementById('projects-grid').innerHTML = projects.map(p => `
+  <article class="card reveal flex flex-col rounded-2xl border border-line bg-panel p-6">
+    <div class="flex items-start justify-between gap-3">
+      <h3 class="font-display font-bold text-white text-xl">${p.title}</h3>
+      ${p.wip ? '<span class="shrink-0 text-xs font-semibold px-2.5 py-1 rounded-full bg-violet/15 text-violet border border-violet/40">Em desenvolvimento</span>' : ''}
+    </div>
+    <p class="mt-2 text-slate-400 text-sm">${p.subtitle}</p>
+    ${p.goal ? `<p class="mt-3 text-sm text-slate-200"><strong class="text-white">Objetivo:</strong> ${p.goal}</p>` : ''}
+    <ul class="mt-4 space-y-1.5 text-sm">${p.items.map(i => `<li class="flex gap-2"><span class="text-accent">•</span><span>${i}</span></li>`).join('')}</ul>
+    <div class="mt-5 pt-5 border-t border-line flex flex-wrap gap-2 mt-auto">${p.stack.map(badge).join('')}</div>
+  </article>`).join('');
+document.getElementById('skills-grid').innerHTML = Object.entries(skills).map(([cat, list]) => `
+  <div class="reveal"><h3 class="font-display font-bold text-white text-lg mb-3">${cat}</h3>
+  <div class="flex flex-wrap gap-2">${list.map(t => `<span class="px-3 py-1.5 text-sm rounded-lg bg-panel border border-line hover:border-accent hover:text-white transition">${t}</span>`).join('')}</div></div>`).join('');
+
+/* ====== Menu mobile ====== */
+const btn = document.getElementById('menu-btn'), menu = document.getElementById('menu');
+btn.addEventListener('click', () => { const open = menu.classList.toggle('hidden') === false; btn.setAttribute('aria-expanded', open); });
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.add('hidden'); btn.setAttribute('aria-expanded', false); }));
+
+/* ====== Digitação no hero ====== */
+const phrases = ["Automatizo processos reais.", "Construo sistemas que substituem o papel.", "Do banco de dados à tela, ponta a ponta."];
+const el = document.getElementById('typed');
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = phrases[0]; }
+else {
+  let p = 0, c = 0, del = false;
+  (function tick() {
+    const s = phrases[p];
+    el.textContent = s.slice(0, c);
+    let d = del ? 30 : 65;
+    if (!del && c === s.length) { del = true; d = 1800; }
+    else if (del && c === 0) { del = false; p = (p + 1) % phrases.length; d = 400; }
+    else c += del ? -1 : 1;
+    setTimeout(tick, d);
+  })();
+}
+
+/* ====== Fade-in ao rolar ====== */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(n => io.observe(n));
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
